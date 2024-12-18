@@ -1,0 +1,26 @@
+﻿@model web_proje.Entity.Kullanici
+@{
+	Layout = "_update_layout";
+}
+
+<h1>Kayıt Güncelleme</h1>
+
+<form asp-action="Update_Kullanici" method="post">
+
+	<input type="hidden" asp-for="@Model.KullaniciId" />
+
+	<label for="KullaniciAd">Kullanıcı Adı</label>
+	<input class="form-control mb-2" asp-for="KullaniciAd" />
+
+	<label for="KullaniciSifre">Şifre</label>
+	<input class="form-control mb-2" asp-for="KullaniciSifre" />
+
+	<label for="RolId">Rol Id Numarası</label>
+	<input class="form-control mb-2" asp-for="RolId" />
+
+
+	<button class="btn btn-info" type="submit">Kaydet</button>
+
+</form>
+
+

@@ -1,0 +1,32 @@
+﻿ 
+
+<h1 style="color:black; text-align:center;margin:50px">Asistanlarımızın Listesi</h1>
+
+
+<table class="table table-striped table-hover">
+    <tr>
+        <td>Asistan Id</td>
+        <td>Asistan Ad</td>
+        <td>Asistan Soyad</td>
+        <td>Asistan Yaş</td>
+        <td>Asistan Telefon Numarası</td>
+        <td>Asistan E-Mail Adresi</td>
+        <td>Bölüm Id</td>
+    </tr>
+    @foreach (var item in ViewBag.AsistanListe as List<Asistan>)
+    {
+
+        <tr>
+            <td>@item.AsistanId</td>
+            <td>@item.AsistanAd</td>
+            <td>@item.AsistanSoyad</td>
+            <td>@item.AsistanYas</td>
+            <td>@item.AsistanTel</td>
+            <td>@item.AsistanMail</td>
+            <td>@item.BolumId</td>
+        </tr>
+    }
+
+</table>
+
+

@@ -1,0 +1,28 @@
+﻿@model web_proje.Entity.Nobet
+@{
+	Layout = "_update_layout";
+}
+
+<h1>Kayıt Güncelleme</h1>
+
+<form asp-action="Update_Nobet" method="post">
+
+	<input type="hidden" asp-for="@Model.NobetId" />
+
+	<label for="AsistanId">Asistan Id Numarası</label>
+	<input class="form-control mb-2" asp-for="AsistanId" />
+
+	<label for="BolumId">Bölüm Id Numarası</label>
+	<input class="form-control mb-2" asp-for="BolumId" />
+
+	<label for="Nobet_Tarihi">Nöbet Tarihi</label>
+	<input class="form-control mb-2" asp-for="Nobet_Tarihi" />
+
+	<label for="Nobet_Tarihi_Bitis">Nöbet Tarihi</label>
+	<input class="form-control mb-2" asp-for="Nobet_Tarihi_Bitis" />
+
+
+	<button class="btn btn-info" type="submit">Kaydet</button>
+
+</form>
+

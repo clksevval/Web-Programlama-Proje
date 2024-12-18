@@ -1,0 +1,32 @@
+﻿@model web_proje.Entity.Asistan
+@{
+	Layout = "_update_layout";
+}
+
+<h1>Kayıt Güncelleme</h1>
+
+<form asp-action="Update" method="post">
+
+	<input type="hidden" asp-for="@Model.AsistanId"/>
+
+	<label for="AsistanAd">Asistanın Tam Adı</label>
+	<input class="form-control mb-2" asp-for="AsistanAd"/>
+
+	<label for="AsistanSoyad">Asistanın Soy Adı</label>
+	<input class="form-control mb-2" asp-for="AsistanSoyad" />
+
+	<label for="AsistanYas">Asistanın Yaşı</label>
+	<input class="form-control mb-2" asp-for="AsistanYas" />
+
+	<label for="AsistanTel">Asistanın Telefon Numarası</label>
+	<input class="form-control mb-2" asp-for="AsistanTel" />
+
+	<label for="AsistanMail">Asistanın E-Mail Adresi</label>
+	<input class="form-control mb-2" asp-for="AsistanMail" />
+
+	<label for="BolumId">Bolum Id</label>
+	<input class="form-control mb-2" asp-for="BolumId" />
+
+	<button class="btn btn-info" type="submit">Kaydet</button>
+
+</form>

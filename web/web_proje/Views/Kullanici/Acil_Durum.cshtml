@@ -1,0 +1,24 @@
+﻿
+
+<h2 style="color:black; text-align:center;margin:50px">Pediatri Bölümünde Neler Oluyor?</h2>
+
+
+@foreach (var item in ViewBag.Acil_DurumListe as List<Acil_Durum>)
+{
+        <div class="card mb-3">
+        <img class="card-img-top" src="~/img/haber_img.jpg" alt="Card image cap" style="width: 100%; height:270px">
+            <div class="card-body">
+                <h5 class="card-title">@item.Baslik</h5>
+            <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
+                <p class="card-text">@item.Aciklama </p>
+            </div>
+                
+                <p class="card-text"><small class="text-muted">@item.Tarih</small></p>
+            </div>
+        </div>
+
+
+
+}
+
+

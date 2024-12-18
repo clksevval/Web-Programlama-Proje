@@ -1,0 +1,26 @@
+﻿@model web_proje.Entity.Randevu
+@{
+	Layout = "_update_layout";
+}
+
+
+<h1>Kayıt Güncelleme</h1>
+
+<form asp-action="Update_Randevu" method="post">
+
+	<input type="hidden" asp-for="@Model.RandevuId" />
+
+	<label for="HocaId">Hocanın Id Numarası</label>
+	<input class="form-control mb-2" asp-for="HocaId" />
+
+	<label for="AsistanId">Sizin Id Numaranız</label>
+	<input class="form-control mb-2" asp-for="AsistanId" />
+
+	<label for="Randevu_Tarihi">Randevu Tarihi</label>
+	<input class="form-control mb-2" asp-for="Randevu_Tarihi" />
+
+
+	<button class="btn btn-info" type="submit">Kaydet</button>
+
+</form>
+

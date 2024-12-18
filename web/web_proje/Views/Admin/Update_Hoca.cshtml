@@ -1,0 +1,32 @@
+﻿@model web_proje.Entity.Hoca
+@{
+	Layout = "_update_layout";
+}
+
+<h1>Kayıt Güncelleme</h1>
+
+<form asp-action="Update_Hoca" method="post">
+
+	<input type="hidden" asp-for="@Model.HocaId" />
+
+	<label for="HocaAd">Hocanın Tam Adı</label>
+	<input class="form-control mb-2" asp-for="HocaAd" />
+
+	<label for="HocaSoyad">Hocanın Soy Adı</label>
+	<input class="form-control mb-2" asp-for="HocaSoyad" />
+
+	<label for="HocaYas">Hocanın Yaşı</label>
+	<input class="form-control mb-2" asp-for="HocaYas" />
+
+	<label for="HocaTel">Hocanın Telefon Numarası</label>
+	<input class="form-control mb-2" asp-for="HocaTel" />
+
+	<label for="HocaMail">Hocanın E-Mail Adresi</label>
+	<input class="form-control mb-2" asp-for="HocaMail" />
+
+	<label for="BolumId">Bolum Id</label>
+	<input class="form-control mb-2" asp-for="BolumId" />
+
+	<button class="btn btn-info" type="submit">Kaydet</button>
+
+</form>

@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\pompi\\OneDrive\\Masa\u00FCst\u00FC\\web\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7E0D1161-7371-48E8-A4DF-481ADD3564BA}|web_proje\\web_proje.csproj|c:\\users\\pompi\\onedrive\\masa\u00FCst\u00FC\\web\\web_proje\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7E0D1161-7371-48E8-A4DF-481ADD3564BA}|web_proje\\web_proje.csproj|solutionrelative:web_proje\\controllers\\admincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AdminController.cs",
+              "DocumentMoniker": "C:\\Users\\pompi\\OneDrive\\Masa\u00FCst\u00FC\\web\\web_proje\\Controllers\\AdminController.cs",
+              "RelativeDocumentMoniker": "web_proje\\Controllers\\AdminController.cs",
+              "ToolTip": "C:\\Users\\pompi\\OneDrive\\Masa\u00FCst\u00FC\\web\\web_proje\\Controllers\\AdminController.cs",
+              "RelativeToolTip": "web_proje\\Controllers\\AdminController.cs",
+              "ViewState": "AgIAADEAAAAAAAAAAAAcwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-18T14:47:50.065Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

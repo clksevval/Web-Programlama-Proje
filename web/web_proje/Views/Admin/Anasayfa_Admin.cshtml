@@ -1,0 +1,52 @@
+﻿@{
+    Layout = "_admin_layout";
+}
+<h1 style="text-align:center">Admin Sayfasına Hoşgeldiniz</h1>
+
+<h1 style="text-align:center">Yeni Üye Oluşturmak İçin</h1>
+<!-- Yeni Admin Kayıt Formu -->
+<form method="post">
+    <div class="form-group">
+        <label for="KullaniciAd">Kullanıcı Adını Giriniz</label>
+        <input type="text" placeholder="Zorunlu Alan" name="KullaniciAd" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="KullaniciSifre">Şifrenizi Giriniz</label>
+        <input type="text" name="KullaniciSifre" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="RolId">Rol Id Giriniz (Admin için 1, Kullanıcı için 2)</label>
+        <input type="text" name="RolId" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary m-3">Ekle</button>
+</form>
+
+<hr />
+
+
+<!-- Kaydı Olan Admin Listesi -->
+
+<h2 style="color:palevioletred; text-align:center">Üyeler Listesi</h2>
+
+<table class="table table-striped table-hover">
+
+    @foreach (var item in ViewBag.KullaniciListe as List<Kullanici>)
+    {
+        <tr>
+            <td>@item.KullaniciId</td>
+            <td>@item.KullaniciAd</td>
+            <td>@item.RolId</td>
+            <td>
+                <a class="btn btn-info" asp-action="Update_Kullanici" asp-route-id="@item.KullaniciId">Güncelle</a>
+            </td>
+            <td>
+
+                <form asp-action="Delete_Kullanici" method="post">
+                    <input type="hidden" name="id" value="@item.KullaniciId" />
+                    <button type="submit" class="btn btn-danger">Sil</button>
+                </form>
+            </td>
+        </tr>
+    }
+
+</table>

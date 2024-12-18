@@ -1,0 +1,32 @@
+﻿
+
+<h1 style="color:black; text-align:center;margin:50px">Öğretim Üyelerimizin Listesi</h1>
+
+
+<table class="table table-striped table-hover">
+    <tr>
+        <td>Öğretim Üyesi Id</td>
+        <td>Öğretim Üyesi Ad</td>
+        <td>Öğretim Üyesi Soyad</td>
+        <td>Öğretim Üyesi Yaş</td>
+        <td>Öğretim Üyesi Telefon Numarası</td>
+        <td>Öğretim Üyesi E-Mail Adresi</td>
+        <td>Bölüm Id</td>
+    </tr>
+    @foreach (var item in ViewBag.HocaListe as List<Hoca>)
+    {
+
+        <tr>
+            <td>@item.HocaId</td>
+            <td>@item.HocaAd</td>
+            <td>@item.HocaSoyad</td>
+            <td>@item.HocaYas</td>
+            <td>@item.HocaTel</td>
+            <td>@item.HocaMail</td>
+            <td>@item.BolumId</td>
+        </tr>
+    }
+
+</table>
+
+

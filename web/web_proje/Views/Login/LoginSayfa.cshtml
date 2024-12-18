@@ -1,0 +1,52 @@
+﻿@model LoginViewModel
+
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - web_proje</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/web_proje.styles.css" asp-append-version="true" />
+
+
+
+</head>
+<body style="background-color:cornsilk">
+    <h4 class="display-6" style="color:red; text-align:center;">SAKARYA İL SAĞLIK MÜDÜRLÜĞÜ</h4>
+    <h5 class="display-7" style="text-align:center;">Mustafa Kemal Atatürk Eğitim ve Araştırma Hastanesi</h5>
+    <h6 class="display-8" style="text-align:center;">Pediatri Bölümü Giriş Ekranı</h6>
+    <form asp-action="LoginSayfa" method="post">
+        <div class="form-group">
+            <label for="KullaniciAdi">Kullanıcı Adı</label>
+            <input type="text" class="form-control mb-2" id="KullaniciAdi" name="KullaniciAdi" required>
+        </div>
+        <div class="form-group">
+            <label for="Sifre">Şifre</label>
+            <input type="password" class="form-control mb-2" id="Sifre" name="Sifre" required>
+        </div>
+        <div class="form-group" >
+            <button type="submit" class="btn form-control ">Giriş Yap</button>
+        </div>
+    </form>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+</body>
+</html>
+<style>
+    .form-group {
+        width: 50%;
+        margin-left: 25%
+    }
+    .btn{
+        color:white;
+        background-color:indianred;
+    }
+
+</style>

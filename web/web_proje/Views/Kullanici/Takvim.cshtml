@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Nöbet Takvimi";
+}
+
+<div id="calendar"></div>
+
+
+<!--Takvim Ekleme-->
+@section Scripts {
+    <script>
+        document.addEventListener('DOMContentLoaded', function () 
+        {
+            var calendarEl = document.getElementById('calendar');
+
+            var calendar = new FullCalendar.Calendar(calendarEl, 
+                {
+                    contentHeight:600,
+                    initialView: 'dayGridMonth', // Ay görünümü
+                    editable: false,            // Etkinlikler düzenlenemez
+                    events: '/api/events',      // Etkinlikleri API'den çek
+                    eventColor:'#ff0050',
+                    displayEventTime: false, // Saat gösterimini kaldırır
+                    eventClick: function(info) // Etkinliklere tıklama olayı
+                    { 
+                        alert('Nöbet Bilgisi: ' + info.event.title);
+                    },
+                    headerToolbar: 
+                    {
+                        left:'prev,next today',
+                        center:'title',
+                        right:'dayGridMonth,timeGridWeek,timeGridDay'
+                    },
+                
+                });
+
+            calendar.render();
+        });
+
+    </script>
+}

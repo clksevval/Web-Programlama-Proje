@@ -1,0 +1,55 @@
+﻿@{
+    Layout = "_admin_layout";
+}
+
+<h1 style="text-align:center">Yeni Acil Durum Haberi Oluşturma ve Güncelleme</h1>
+
+<!-- Yeni Kayıt Formu -->
+<form method="post">
+    <div class="form-group">
+        <label for="Baslik">Başlık</label>
+        <input type="text" placeholder="Zorunlu Alan" name="Baslik" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="Aciklama">Haber Açıklaması</label>
+        <input type="text" placeholder="Zorunlu Alan" name="Aciklama" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="Tarih">Haber Tarihi</label>
+        <input type="text" name="Tarih" class="form-control" />
+    </div>
+    
+    <button type="submit" class="btn btn-primary m-3">Ekle</button>
+</form>
+
+<hr />
+
+
+<!-- Kaydı Olan Acil_Durumların Listesi -->
+
+<h2 style="color:palevioletred; text-align:center;margin:50px">Geçmiş Haberler</h2>
+
+<table class="table table-striped table-hover">
+
+    @foreach (var item in ViewBag.Acil_DurumListe as List<Acil_Durum>)
+    {
+        <tr>
+            <td>@item.Acil_DurumId</td>
+            <td>@item.Baslik</td>
+            <td>@item.Tarih</td>
+            <td>
+                <a class="btn btn-info" asp-action="Update_Acil_Durum" asp-route-id="@item.Acil_DurumId">Güncelle</a>
+            </td>
+            <td>
+
+                <form asp-action="Delete_Acil_Durum" method="post">
+                    <input type="hidden" name="id" value="@item.Acil_DurumId" />
+                    <button type="submit" class="btn btn-danger">Sil</button>
+                </form>
+            </td>
+
+        </tr>
+    }
+
+</table>
+

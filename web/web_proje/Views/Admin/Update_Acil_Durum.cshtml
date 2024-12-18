@@ -1,0 +1,24 @@
+﻿@model web_proje.Entity.Acil_Durum
+@{
+	Layout = "_update_layout";
+}
+
+<h1>Kayıt Güncelleme</h1>
+
+<form asp-action="Update_Acil_Durum" method="post">
+
+	<input type="hidden" asp-for="@Model.Acil_DurumId" />
+
+	<label for="Baslik">Başlık</label>
+	<input class="form-control mb-2" asp-for="Baslik" />
+
+	<label for="Aciklama">Açıklama</label>
+	<input class="form-control mb-2" asp-for="Aciklama" />
+
+	<label for="Tarih">Haber Tarihi</label>
+	<input class="form-control mb-2" asp-for="Tarih" />
+
+
+	<button class="btn btn-info" type="submit">Kaydet</button>
+
+</form>

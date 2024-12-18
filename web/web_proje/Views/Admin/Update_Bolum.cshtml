@@ -1,0 +1,25 @@
+﻿@model web_proje.Entity.Bolum
+@{
+	Layout = "_update_layout";
+}
+
+
+<h1>Kayıt Güncelleme</h1>
+
+<form asp-action="Update_Bolum" method="post">
+
+	<input type="hidden" asp-for="@Model.BolumId" />
+
+	<label for="BolumAd">Bolumın Tam Adı</label>
+	<input class="form-control mb-2" asp-for="BolumAd" />
+
+	<label for="Hasta_Sayisi">Hasta Sayısı</label>
+	<input class="form-control mb-2" asp-for="Hasta_Sayisi" />
+
+	<label for="Bos_Yatak_Sayisi">Boş Yatak Sayısı</label>
+	<input class="form-control mb-2" asp-for="Bos_Yatak_Sayisi" />
+
+
+	<button class="btn btn-info" type="submit">Kaydet</button>
+
+</form>

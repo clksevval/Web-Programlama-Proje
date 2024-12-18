@@ -1,0 +1,56 @@
+﻿@{
+    Layout = "_admin_layout";
+}
+
+<h1 style="text-align:center;margin:50px">Yeni Bölüm Kaydı Oluşturma ve Güncelleme</h1>
+
+<!-- Yeni Kayıt Formu -->
+<form method="post">
+    <div class="form-group">
+        <label for="BolumAd">Bölümün Tam Adı</label>
+        <input type="text" placeholder="Zorunlu Alan" name="BolumAd" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="Hasta_Sayisi">Hasta Sayısı</label>
+        <input type="text" placeholder="Zorunlu Alan" name="Hasta_Sayisi" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="Bos_Yatak_Sayisi">Boş Yatak Sayısı</label>
+        <input type="text" name="Bos_Yatak_Sayisi" class="form-control" />
+    </div>
+    
+    <button type="submit" class="btn btn-primary m-3">Ekle</button>
+</form>
+
+<hr />
+
+
+<!-- Kaydı Olan Bolumların Listesi -->
+
+<h2 style="color:palevioletred; text-align:center">Bölüm Listesi</h2>
+
+<table class="table table-striped table-hover">
+
+    @foreach (var item in ViewBag.BolumListe as List<Bolum>)
+    {
+        <tr>
+            <td>@item.BolumId</td>
+            <td>@item.BolumAd</td>
+            <td>@item.Hasta_Sayisi</td>
+            <td>@item.Bos_Yatak_Sayisi</td>
+            <td>
+                <a class="btn btn-info" asp-action="Update_Bolum" asp-route-id="@item.BolumId">Güncelle</a>
+            </td>
+            <td>
+
+                <form asp-action="Delete_Bolum" method="post">
+                    <input type="hidden" name="id" value="@item.BolumId" />
+                    <button type="submit" class="btn btn-danger">Sil</button>
+                </form>
+            </td>
+
+        </tr>
+    }
+
+</table>
+

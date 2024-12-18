@@ -1,0 +1,58 @@
+﻿@{
+    Layout = "_admin_layout";
+}
+
+<h1 style="text-align:center;margin:50px">Nöbet Takvimi Oluşturma</h1>
+
+<!-- Yeni Kayıt Formu -->
+<form method="post">
+    <div class="form-group">
+        <label for="AsistanId">Asistan Id Numarası</label>
+        <input type="text" placeholder="Zorunlu Alan" name="AsistanId" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="BolumId">Bölüm Id Numarası</label>
+        <input type="text" placeholder="Zorunlu Alan" name="BolumId" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="Nobet_Tarihi">Nöbet Tarihi</label>
+        <input type="text" name="Nobet_Tarihi" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="Nobet_Tarihi_Bitis">Nöbet Tarihi Bitişi</label>
+        <input type="text" name="Nobet_Tarihi_Bitis" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary m-3">Ekle</button>
+</form>
+
+<hr />
+
+
+<!-- Kaydı Olan Nöbet Listesi -->
+
+<h2 style="color:palevioletred; text-align:center">Nöbetler Tablosu</h2>
+
+<table class="table table-striped table-hover">
+
+    @foreach (var item in ViewBag.NobetListe as List<Nobet>)
+    {
+        <tr>
+            <td>@item.AsistanId</td>
+            <td>@item.BolumId</td>
+            <td>@item.Nobet_Tarihi</td>
+            <td>@item.Nobet_Tarihi_Bitis</td>
+            <td>
+                <a class="btn btn-info" asp-action="Update_Nobet" asp-route-id="@item.NobetId">Güncelle</a>
+            </td>
+            <td>
+
+                <form asp-action="Delete_Nobet" method="post">
+                    <input type="hidden" name="id" value="@item.NobetId" />
+                    <button type="submit" class="btn btn-danger">Sil</button>
+                </form>
+            </td>
+
+        </tr>
+    }
+
+</table>

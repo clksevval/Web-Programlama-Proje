@@ -1,0 +1,64 @@
+﻿@{
+    Layout = "_admin_layout";
+}
+
+<h1 style="text-align:center;margin:50px">Yeni Asistan Kaydı Oluşturma ve Güncelleme</h1>
+
+<!-- Yeni Kayıt Formu -->
+<form method="post" >
+    <div class="form-group" >
+        <label for="AsistanAd">Asistanın Tam Adı</label>
+        <input type="text" placeholder="Zorunlu Alan" name="AsistanAd" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="AsistanSoyad">Asistanın Soyadı</label>
+        <input type="text" placeholder="Zorunlu Alan" name="AsistanSoyad" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="AsistanYas">Asistanın Yaşı</label>
+        <input type="text" name="AsistanYas" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="AsistanTel">Asistanın Telefon Numarası</label>
+        <input type="text" name="AsistanTel" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="AsistanMail">Asistanın E-Mail Adresi</label>
+        <input type="text" placeholder="Zorunlu Alan" name="AsistanMail" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="BolumId">Bölüm Id</label>
+        <input type="text" name="BolumId" class="form-control" />
+    </div>
+    <button type="submit" class="btn btn-primary m-3">Ekle</button>
+</form>
+
+<hr />
+
+
+<!-- Kaydı Olan Asistanların Listesi -->
+
+<h2 style="color:palevioletred; text-align:center">Asistan Listesi</h2>
+
+<table class="table table-striped table-hover">
+
+    @foreach (var item in ViewBag.AsistanListe as List<Asistan>)
+    {
+        <tr>
+            <td>@item.AsistanId</td>
+            <td>@item.AsistanAd</td>
+            <td>@item.AsistanSoyad</td>
+            <td>
+                <a class="btn btn-info" asp-action="Update" asp-route-id="@item.AsistanId">Güncelle</a>
+            </td>
+            <td>
+                
+                <form asp-action="Delete" method="post">
+                    <input type="hidden" name="id" value="@item.AsistanId" />
+                    <button type="submit" class="btn btn-danger">Sil</button></form>
+            </td>
+
+        </tr>
+    }
+
+</table>
